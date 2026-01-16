@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boardgame Landing Page (Demo)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Sticky topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <div class="brand">
+          <span class="brand-badge"></span>
+          <span id="brandName">Boardgame</span>
+        </div>
+        <div class="nav">
+          <a href="#intro">Giới thiệu</a>
+          <a href="#rules">Luật chơi</a>
+          <a href="#cards">Nội dung lá bài</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="section" id="intro">
+    <div class="wrap">
+      <div class="grid-2">
+        <div>
+          <span class="pill"><span class="dot"></span><span>Landing page demo (HTML/CSS/JS)</span></span>
+          <h1 class="title" id="gameTitle">TÊN TRÒ CHƠI</h1>
+          <p class="subtitle" id="gameGoal">
+            Mục đích boardgame: (demo) xây dựng chiến lược phát triển – cân bằng kinh tế, môi trường, xã hội;
+            kết nối các lá “tác động” để tối ưu điểm số theo địa danh.
+          </p>
+
+          <div class="spacer"></div>
+          <div class="row">
+            <button class="btn primary" id="scrollToRulesBtn">Xem luật chơi</button>
+            <button class="btn" id="scrollToCardsBtn">Xem các lá bài</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card pad">
+            <h3>Gợi ý thay thế dữ liệu</h3>
+            <p class="muted" style="margin:0; line-height:1.6;">
+              Bạn chỉ cần sửa mảng <b>DATA</b> trong phần JS (cuối file): tên game, 2 lá mẫu, nội dung luật,
+              danh sách 10 địa danh và 54 lá tác động.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- Sample card 1 -->
+          <div class="card-sample" id="sampleCard1">
+            <div class="inner">
+              <div class="badge" id="sampleBadge1">Lá mẫu</div>
+              <div style="font-weight:800; letter-spacing:-.02em" id="sampleName1">TÁC ĐỘNG A</div>
+              <div class="small" id="sampleDesc1">
+                (demo) Tăng GDP địa phương, nhưng tăng phát thải. Kích hoạt khi có 2 nhà máy và 1 tuyến logistics.
+              </div>
+              <div class="big-number" id="sampleNum1">+3</div>
+            </div>
+          </div>
+
+          <!-- Sample card 2 -->
+          <div class="card-sample" id="sampleCard2">
+            <div class="inner">
+              <div class="badge" id="sampleBadge2">Lá mẫu</div>
+              <div style="font-weight:800; letter-spacing:-.02em" id="sampleName2">TÁC ĐỘNG B</div>
+              <div class="small" id="sampleDesc2">
+                (demo) Nâng chất lượng sống, giảm rủi ro thiên tai. Hiệu ứng mạnh ở khu vực ven biển.
+              </div>
+              <div class="big-number" id="sampleNum2">+2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="section" id="rules">
+    <div class="wrap">
+      <div class="rules-grid">
+        <!-- Left: A4 preview -->
+        <div>
+          <div class="a4-preview" id="a4Preview" role="button" aria-label="Mở luật chơi">
+            <div class="a4-title" id="a4PreviewTitle">LUẬT CHƠI (A4 - thu nhỏ)</div>
+            <div class="a4-text" id="a4PreviewText">
+              1) Chuẩn bị: Mỗi người nhận 3 lá tác động, đặt 10 lá địa danh theo thứ tự.
+              2) Lượt chơi: Chọn 1 địa danh -> đánh 1 lá tác động -> tính điểm theo hiệu ứng.
+              3) Kết thúc: Sau N vòng, cộng điểm kinh tế/xã hội/môi trường, người cao nhất thắng.
+              (Demo text - bạn thay bằng luật thật.)
+            </div>
+            <div class="zoom-hint">Click để phóng to &amp; đọc</div>
+          </div>
+
+          <div class="spacer"></div>
+          <div class="row">
+            <span class="kbd">Mẹo: Esc để đóng</span>
+            <span class="kbd">Scroll trong cửa sổ đọc A4</span>
+          </div>
+        </div>
+
+        <!-- Right: Title + description -->
+        <div class="card pad">
+          <h2 style="margin:0 0 8px; font-size:32px; letter-spacing:-.02em;">Luật chơi</h2>
+          <p class="muted" style="margin:0; line-height:1.7;" id="rulesIntro">
+            Trang này hiển thị file luật A4 dạng thu nhỏ bên trái. Khi click, mở modal để đọc dễ dàng,
+            cuộn lên/xuống như xem tài liệu.
+          </p>
+
+          <div class="divider"></div>
+          <h3>Gợi ý nâng cấp</h3>
+          <ul class="muted" style="margin:0; line-height:1.7;">
+            <li>Thay phần “A4 full” bằng ảnh/iframe PDF nếu bạn có file luật.</li>
+            <li>Tạo nút tải PDF.</li>
+            <li>Thêm mục lục (anchor) trong luật.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="section" id="cards">
+    <div class="wrap">
+      <div class="row" style="justify-content:space-between; align-items:flex-end;">
+        <div>
+          <span class="pill"><span class="dot" style="background:var(--accent2)"></span><span>Slide địa danh + các lá tác động</span></span>
+          <h2 style="margin:14px 0 8px; font-size:34px; letter-spacing:-.02em;">Nội dung các lá bài</h2>
+          <p class="muted" style="margin:0; line-height:1.65;">
+            Mỗi slide: tên địa danh (trái), ảnh địa danh (dưới), danh sách các lá tác động (phải).
+          </p>
+        </div>
+
+        <div class="row">
+          <button class="btn" id="prevBtn" aria-label="Slide trước">← Trước</button>
+          <button class="btn" id="nextBtn" aria-label="Slide sau">Sau →</button>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="slider-controls">
+        <div class="dots" id="dots"></div>
+        <div class="kbd">Phím: ← / →</div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="slider" id="slider">
+        <div class="slides" id="slides"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal (Rules A4) -->
+  <div class="modal" id="rulesModal" aria-hidden="true">
+    <div class="panel" role="dialog" aria-modal="true" aria-label="Luật chơi phóng to">
+      <div class="panel-head">
+        <div class="left">
+          <span class="icon">📄</span>
+          <span id="modalTitle">Luật chơi (A4)</span>
+        </div>
+        <button class="btn" id="closeModalBtn" aria-label="Đóng">Đóng</button>
+      </div>
+      <div class="panel-body">
+        <div class="a4-full" id="a4Full">
+          <h2 id="a4FullHeading">LUẬT CHƠI</h2>
+          <p class="muted" style="color:#2a2f3a" id="a4FullDesc">
+            (Demo) Thay nội dung này bằng luật thật. Bạn có thể dán nguyên văn, hoặc thay bằng ảnh/PDF.
+          </p>
+          <div class="divider" style="background:rgba(0,0,0,.08)"></div>
+          <div id="a4FullContent">
+            <p><b>1. Mục tiêu:</b> Tối ưu điểm số dựa trên tác động lên các địa danh.</p>
+            <p><b>2. Thành phần:</b> 10 lá địa danh, 54 lá tác động, bảng điểm, token.</p>
+            <p><b>3. Thiết lập:</b></p>
+            <ul>
+              <li>Xáo 54 lá tác động, chia mỗi người 3 lá.</li>
+              <li>Đặt 10 lá địa danh theo thứ tự (hoặc bốc ngẫu nhiên).</li>
+              <li>Đặt bảng điểm ở giữa bàn.</li>
+            </ul>
+            <p><b>4. Lượt chơi:</b></p>
+            <ul>
+              <li>Chọn 1 địa danh (đang “mở”).</li>
+              <li>Đánh 1 lá tác động phù hợp điều kiện.</li>
+              <li>Áp hiệu ứng: cộng/trừ điểm, thêm token, kích hoạt combo.</li>
+              <li>Bốc lại 1 lá để đủ 3 lá trên tay (nếu còn).</li>
+            </ul>
+            <p><b>5. Kết thúc:</b> Sau N vòng hoặc hết bài. Người có tổng điểm cao nhất thắng.</p>
+            <p><b>6. Luật nâng cao (tuỳ chọn):</b> Sự kiện, giới hạn ô nhiễm, thảm hoạ, chính sách.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * =========================
+     * 1) DỮ LIỆU DEMO (SỬA Ở ĐÂY)
+     * =========================
+     */
+    const DATA = {
+      game: {
+        title: "URBAN IMPACTS",
+        goal:
+          "Mục đích: xây dựng chiến lược phát triển bền vững cho các địa danh; cân bằng kinh tế – xã hội – môi trường thông qua các lá tác động."
+      },
+      samples: [
+        {
+          badge: "Lá tác động mẫu",
+          name: "Khu công nghiệp mở rộng",
+          desc: "Tăng điểm kinh tế +3. Nếu địa danh đã có Logistics, +1 thêm. Nếu vượt ngưỡng ô nhiễm, -2 môi trường.",
+          num: "+3"
+        },
+        {
+          badge: "Lá tác động mẫu",
+          name: "Đầu tư y tế – giáo dục",
+          desc: "Tăng điểm xã hội +2. Nếu là đô thị lớn, +1. Nếu ngân sách thấp, yêu cầu trả 1 token kinh tế.",
+          num: "+2"
+        }
+      ],
+      rules: {
+        intro:
+          "Bên trái là bản luật A4 thu nhỏ. Click để mở phóng to và cuộn đọc. Bạn có thể thay nội dung bằng PDF/ảnh sau.",
+        previewTitle: "LUẬT CHƠI (A4 - thu nhỏ)",
+        previewText:
+          "1) Chuẩn bị: Chia bài, đặt địa danh, chuẩn bị bảng điểm.\n" +
+          "2) Lượt chơi: Chọn địa danh -> đánh lá tác động -> áp hiệu ứng.\n" +
+          "3) Kết thúc: Sau N vòng hoặc hết bài.\n" +
+          "(Demo text - thay bằng luật thật.)",
+        modalTitle: "Luật chơi (A4)",
+        fullHeading: "LUẬT CHƠI",
+        fullDesc:
+          "Gợi ý: bạn có thể dán nguyên văn luật tại đây; hoặc thay phần này bằng iframe PDF / ảnh A4."
+      },
+      // 10 địa danh (demo). Mỗi địa danh có danh sách các lá tác động liên quan.
+      // 54 lá tác động: demo chỉ tạo ít, bạn có thể mở rộng/nhúng thật vào impacts.
+      places: [
+        {
+          name: "TP. Hồ Chí Minh",
+          imageText: "Ảnh/thumbnail TP.HCM (thay bằng <img src=...>)",
+          tags: ["Đô thị", "Dịch vụ", "Cảng"],
+          impacts: [
+            { code: "T01", title: "Mở rộng metro", desc: "Giảm ùn tắc, +2 xã hội; nếu có ngân sách: +1 kinh tế." },
+            { code: "T02", title: "Logistics cảng biển", desc: "+3 kinh tế; nếu ô nhiễm cao: -1 môi trường." },
+            { code: "T03", title: "Chống ngập đô thị", desc: "+2 môi trường; nếu mưa lớn: +1 thêm." }
+          ]
+        },
+        {
+          name: "Hà Nội",
+          imageText: "Ảnh/thumbnail Hà Nội",
+          tags: ["Thủ đô", "Dịch vụ", "Di sản"],
+          impacts: [
+            { code: "T04", title: "Bảo tồn phố cổ", desc: "+2 văn hoá; nếu du lịch cao: +1 kinh tế." },
+            { code: "T05", title: "Vành đai giao thông", desc: "+2 kinh tế; nếu giải phóng mặt bằng: -1 xã hội." }
+          ]
+        },
+        {
+          name: "Đà Nẵng",
+          imageText: "Ảnh/thumbnail Đà Nẵng",
+          tags: ["Biển", "Du lịch", "Logistics"],
+          impacts: [
+            { code: "T06", title: "Du lịch bền vững", desc: "+2 kinh tế; nếu môi trường tốt: +1 thêm." },
+            { code: "T07", title: "Cảng – kho vận", desc: "+2 kinh tế; nếu bão: -1." }
+          ]
+        },
+        {
+          name: "Hải Phòng",
+          imageText: "Ảnh/thumbnail Hải Phòng",
+          tags: ["Cảng", "Công nghiệp"],
+          impacts: [
+            { code: "T08", title: "Khu công nghiệp ven biển", desc: "+3 kinh tế; nếu thiếu xử lý thải: -2 môi trường." }
+          ]
+        },
+        {
+          name: "Bình Dương",
+          imageText: "Ảnh/thumbnail Bình Dương",
+          tags: ["Công nghiệp", "FDI"],
+          impacts: [
+            { code: "T09", title: "Thu hút FDI", desc: "+3 kinh tế; nếu thiếu lao động: -1 xã hội." }
+          ]
+        },
+        {
+          name: "Đồng Nai",
+          imageText: "Ảnh/thumbnail Đồng Nai",
+          tags: ["Công nghiệp", "Hạ tầng"],
+          impacts: [
+            { code: "T10", title: "Hạ tầng liên vùng", desc: "+2 kinh tế; nếu chi phí cao: -1 ngân sách." }
+          ]
+        },
+        {
+          name: "Cần Thơ",
+          imageText: "Ảnh/thumbnail Cần Thơ",
+          tags: ["ĐBSCL", "Nông nghiệp"],
+          impacts: [
+            { code: "T11", title: "Nâng cấp đê bao", desc: "+2 môi trường; nếu hạn mặn: +1 thêm." }
+          ]
+        },
+        {
+          name: "Lào Cai",
+          imageText: "Ảnh/thumbnail Lào Cai",
+          tags: ["Miền núi", "Du lịch"],
+          impacts: [
+            { code: "T12", title: "Phát triển du lịch núi", desc: "+2 kinh tế; nếu quá tải: -1 môi trường." }
+          ]
+        },
+        {
+          name: "Quảng Ninh",
+          imageText: "Ảnh/thumbnail Quảng Ninh",
+          tags: ["Than", "Du lịch"],
+          impacts: [
+            { code: "T13", title: "Chuyển dịch năng lượng", desc: "+2 môi trường; -1 kinh tế ngắn hạn." }
+          ]
+        },
+        {
+          name: "Huế",
+          imageText: "Ảnh/thumbnail Huế",
+          tags: ["Di sản", "Văn hoá"],
+          impacts: [
+            { code: "T14", title: "Bảo tồn di sản", desc: "+3 văn hoá; nếu du lịch cao: +1 kinh tế." }
+          ]
+        }
+      ]
+    };
+
+    /**
+     * =========================
+     * 2) GÁN DỮ LIỆU VÀO UI
+     * =========================
+     */
+    const $ = (q) => document.querySelector(q);
+
+    function bindHero(){
+      $("#brandName").textContent = DATA.game.title;
+      $("#gameTitle").textContent = DATA.game.title;
+      $("#gameGoal").textContent = DATA.game.goal;
+
+      const s1 = DATA.samples[0];
+      const s2 = DATA.samples[1];
+
+      $("#sampleBadge1").textContent = s1.badge;
+      $("#sampleName1").textContent = s1.name;
+      $("#sampleDesc1").textContent = s1.desc;
+      $("#sampleNum1").textContent = s1.num;
+
+      $("#sampleBadge2").textContent = s2.badge;
+      $("#sampleName2").textContent = s2.name;
+      $("#sampleDesc2").textContent = s2.desc;
+      $("#sampleNum2").textContent = s2.num;
+    }
+
+    function bindRules(){
+      $("#rulesIntro").textContent = DATA.rules.intro;
+      $("#a4PreviewTitle").textContent = DATA.rules.previewTitle;
+      $("#a4PreviewText").textContent = DATA.rules.previewText;
+      $("#modalTitle").textContent = DATA.rules.modalTitle;
+      $("#a4FullHeading").textContent = DATA.rules.fullHeading;
+      $("#a4FullDesc").textContent = DATA.rules.fullDesc;
+    }
+
+    /**
+     * =========================
+     * 3) MODAL: LUẬT CHƠI
+     * =========================
+     */
+    const modal = $("#rulesModal");
+    const openModal = () => {
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const closeModal = () => {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    $("#a4Preview").addEventListener("click", openModal);
+    $("#closeModalBtn").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      // click nền tối để đóng
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+    });
+
+    /**
+     * =========================
+     * 4) SLIDER: ĐỊA DANH
+     * =========================
+     */
+    const slidesEl = $("#slides");
+    const dotsEl = $("#dots");
+    let current = 0;
+
+    function slideTemplate(place){
+      const tags = (place.tags || []).map(t => `<span class="chip">${escapeHtml(t)}</span>`).join("");
+      const impacts = (place.impacts || []).map(it => `
+        <div class="impact-item">
+          <div class="impact-tag">${escapeHtml(it.code || "T")}</div>
+          <div class="impact-text">
+            <p class="impact-title">${escapeHtml(it.title || "")}</p>
+            <p class="impact-desc">${escapeHtml(it.desc || "")}</p>
+          </div>
+        </div>
+      `).join("");
+
+      return `
+        <div class="slide">
+          <div class="slide-grid">
+            <div class="place-card">
+              <div class="place-name">${escapeHtml(place.name)}</div>
+              <div class="place-img">
+                ${escapeHtml(place.imageText || "Ảnh địa danh")}
+              </div>
+              <div class="spacer"></div>
+              <div class="chips">${tags}</div>
+            </div>
+
+            <div class="impact-list">
+              <div class="impact-head">
+                <h4>Danh sách lá tác động</h4>
+                <span class="pill" style="padding:6px 10px;">
+                  <span class="dot" style="width:7px;height:7px;"></span>
+                  <span>${(place.impacts || []).length} lá</span>
+                </span>
+              </div>
+              <div class="impact-items">
+                ${impacts || `<div class="muted">Chưa có lá tác động.</div>`}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function buildSlider(){
+      slidesEl.innerHTML = DATA.places.map(slideTemplate).join("");
+
+      dotsEl.innerHTML = DATA.places.map((_, i) => `
+        <button class="dotbtn ${i===0 ? "active":""}" aria-label="Tới slide ${i+1}" data-i="${i}"></button>
+      `).join("");
+
+      dotsEl.querySelectorAll(".dotbtn").forEach(btn => {
+        btn.addEventListener("click", () => goTo(parseInt(btn.dataset.i, 10)));
+      });
+
+      updateSlider();
+    }
+
+    function updateSlider(){
+      const x = -current * 100;
+      slidesEl.style.transform = `translateX(${x}%)`;
+
+      dotsEl.querySelectorAll(".dotbtn").forEach((b, i) => {
+        b.classList.toggle("active", i === current);
+      });
+    }
+
+    function goTo(index){
+      const n = DATA.places.length;
+      current = ((index % n) + n) % n; // wrap
+      updateSlider();
+    }
+
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+
+    $("#nextBtn").addEventListener("click", next);
+    $("#prevBtn").addEventListener("click", prev);
+
+    window.addEventListener("keydown", (e) => {
+      // tránh bắt phím khi đang mở modal
+      if (modal.classList.contains("show")) return;
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    });
+
+    // Swipe (mobile)
+    (function enableSwipe(){
+      const slider = $("#slider");
+      let startX = 0;
+      let dragging = false;
+
+      slider.addEventListener("touchstart", (e) => {
+        dragging = true;
+        startX = e.touches[0].clientX;
+      }, {passive:true});
+
+      slider.addEventListener("touchmove", (e) => {
+        if (!dragging) return;
+        // không cần kéo realtime, chỉ nhận hướng
+      }, {passive:true});
+
+      slider.addEventListener("touchend", (e) => {
+        if (!dragging) return;
+        dragging = false;
+        const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+        const dx = endX - startX;
+        if (Math.abs(dx) > 40){
+          if (dx < 0) next();
+          else prev();
+        }
+      });
+    })();
+
+    /**
+     * =========================
+     * 5) SCROLL BUTTONS
+     * =========================
+     */
+    $("#scrollToRulesBtn").addEventListener("click", () => {
+      document.querySelector("#rules").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+    $("#scrollToCardsBtn").addEventListener("click", () => {
+      document.querySelector("#cards").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    /**
+     * =========================
+     * 6) UTIL
+     * =========================
+     */
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    /**
+     * =========================
+     * INIT
+     * =========================
+     */
+    bindHero();
+    bindRules();
+    buildSlider();
+  </script>
+</body>
+</html>
