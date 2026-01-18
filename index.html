@@ -213,7 +213,7 @@
       places: [
         {
           name: "TP. Hồ Chí Minh",
-          imageText: "Ảnh/thumbnail TP.HCM",
+          imageUrl: "assets/hcm.jpg",
           tags: ["Đô thị", "Dịch vụ", "Cảng"],
           impacts: [
             { code: "T01", title: "Mở rộng metro", desc: "Giảm ùn tắc, +2 xã hội; nếu có ngân sách: +1 kinh tế." },
@@ -223,7 +223,7 @@
         },
         {
           name: "Hà Nội",
-          imageText: "Ảnh/thumbnail Hà Nội",
+          imageUrl: "assets/hanoi.jpg",
           tags: ["Thủ đô", "Dịch vụ", "Di sản"],
           impacts: [
             { code: "T04", title: "Bảo tồn phố cổ", desc: "+2 văn hoá; nếu du lịch cao: +1 kinh tế." },
@@ -327,7 +327,9 @@
           <div class="slide-grid">
             <div class="place-card">
               <div class="place-name">${escapeHtml(place.name)}</div>
-              <div class="place-img">${escapeHtml(place.imageText || "Ảnh địa danh")}</div>
+              <div class="place-img">
+                <img class="place-thumb" src="${escapeHtml(place.imageUrl || "")}" alt="Ảnh ${escapeHtml(place.name)}">
+              </div>
               <div class="spacer"></div>
               <div class="chips">${tags}</div>
             </div>
