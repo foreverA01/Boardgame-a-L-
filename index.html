@@ -211,27 +211,242 @@
       },
 
       places: [
-        {
-          name: "TP. Hồ Chí Minh",
-          imageUrl: "assets/hcm.jpg",
-          tags: ["Đô thị", "Dịch vụ", "Cảng"],
-          impacts: [
-            { code: "T01", title: "Mở rộng metro", desc: "Giảm ùn tắc, +2 xã hội; nếu có ngân sách: +1 kinh tế." },
-            { code: "T02", title: "Logistics cảng biển", desc: "+3 kinh tế; nếu ô nhiễm cao: -1 môi trường." },
-            { code: "T03", title: "Chống ngập đô thị", desc: "+2 môi trường; nếu mưa lớn: +1 thêm." }
-          ]
-        },
-        {
-          name: "Hà Nội",
-          imageUrl: "assets/hanoi.jpg",
-          tags: ["Thủ đô", "Dịch vụ", "Di sản"],
-          impacts: [
-            { code: "T04", title: "Bảo tồn phố cổ", desc: "+2 văn hoá; nếu du lịch cao: +1 kinh tế." },
-            { code: "T05", title: "Vành đai giao thông", desc: "+2 kinh tế; nếu giải phóng mặt bằng: -1 xã hội." }
-          ]
-        }
-        // ... thêm 8 địa danh còn lại
-      ]
+  {
+    name: "Hà Nội",
+    imageUrl: "assets/hanoi.jpg",
+    tags: ["Trung tâm hành chính", "Giáo dục"],
+    impacts: [
+      { code: "A", title: "Mở rộng vùng kinh tế trọng điểm", desc: "Hà Nội (+1), TP.HCM (+1), Đà Nẵng (+2)" },
+      { code: "A", title: "Năng suất lao động tăng", desc: "Hà Nội (+1), TP.HCM (+1)" },
+      { code: "A", title: "Gia tăng sản xuất trong nước", desc: "Hà Nội (+1), TP.HCM (+1), Hải Phòng (+2)" },
+
+      { code: "B", title: "Dân số đông, thị trường tiêu dùng lớn", desc: "TP.HCM (+1), Hà Nội (+1)" },
+      { code: "B", title: "Chất lượng cuộc sống nâng cao", desc: "Hà Nội (+1), TP.HCM (+1), Đà Nẵng (+3)" },
+      { code: "B", title: "Gia tăng nhu cầu dịch vụ đô thị", desc: "Hà Nội (+1), TP.HCM (+1)" },
+      { code: "B", title: "Quá tải dân cư đô thị", desc: "TP.HCM (-3), Hà Nội (-2)" },
+
+      { code: "C", title: "Thị trường nội địa lớn và đa dạng", desc: "TP.HCM (+1), Hà Nội (+1)" },
+      { code: "C", title: "Cạnh tranh thúc đẩy đổi mới dịch vụ", desc: "TP.HCM (+1), Hà Nội (+1)" },
+      { code: "C", title: "Hội nhập kinh tế quốc tế", desc: "TP.HCM (+1), Hà Nội (+1), Hải Phòng (+2)" },
+
+      { code: "D", title: "Hạ tầng giao thông hiện đại", desc: "Hà Nội (+1), TP.HCM (+1), Hải Phòng (+2)" },
+      { code: "D", title: "Phát triển công nghệ thông tin", desc: "TP.HCM (+1), Hà Nội(+1)" },
+      { code: "D", title: "Chuyển đổi số trong dịch vụ", desc: "TP.HCM(+1), Hà Nội(+1)" },
+
+      { code: "E", title: "Chính sách ưu tiên phát triển dịch vụ", desc: "Hà Nội (+1), TP.HCM (+1)" },
+      { code: "E", title: "Hỗ trợ phát triển vùng kinh tế trọng điểm", desc: "Hà Nội (+1), TP.HCM(+1)" },
+      { code: "E", title: "Định hướng chuyển đổi mô hình tăng trưởng", desc: "Hà Nội(+1), TP.HCM(+1)" },
+      { code: "E", title: "Thủ tục hành chính phức tạp", desc: "TP.HCM (-2), Hà Nội (-2)" },
+
+      { code: "F", title: "Mạng lưới sông ngòi thuận lợi giao thông", desc: "Cần Thơ(+3), Hà Nội (+1)" }
+    ]
+  },
+
+  {
+    name: "TP. Hồ Chí Minh",
+    imageUrl: "assets/hcm.jpg",
+    tags: ["Trung tâm kinh tế", "Tài chính"],
+    impacts: [
+      { code: "A", title: "Tăng trưởng công nghiệp mạnh", desc: "TP.HCM (+1), Bình Dương (+2), Đồng Nai (+3)" },
+      { code: "A", title: "Mở rộng vùng kinh tế trọng điểm", desc: "Hà Nội (+1), TP.HCM (+1), Đà Nẵng (+2)" },
+      { code: "A", title: "Năng suất lao động tăng", desc: "Hà Nội (+1), TP.HCM (+1)" },
+      { code: "A", title: "Gia tăng sản xuất trong nước", desc: "Hà Nội (+1), TP.HCM (+1), Hải Phòng (+2)" },
+      { code: "A", title: "Công nghiệp gây áp lực môi trường", desc: "TP.HCM (-3), Bình Dương (-1)" },
+
+      { code: "B", title: "Dân số đông, thị trường tiêu dùng lớn", desc: "TP.HCM (+1), Hà Nội (+1)" },
+      { code: "B", title: "Chất lượng cuộc sống nâng cao", desc: "Hà Nội (+1), TP.HCM (+1), Đà Nẵng (+3)" },
+      { code: "B", title: "Nguồn lao động dồi dào", desc: "TP.HCM (+1), Bình Dương (+2), Đồng Nai (+1)" },
+      { code: "B", title: "Gia tăng nhu cầu dịch vụ đô thị", desc: "Hà Nội (+1), TP.HCM (+1)" },
+      { code: "B", title: "Đô thị hóa nhanh", desc: "TP.HCM (+1), Bình Dương (+3)" },
+      { code: "B", title: "Quá tải dân cư đô thị", desc: "TP.HCM (-3), Hà Nội (-2)" },
+
+      { code: "C", title: "Thị trường nội địa lớn và đa dạng", desc: "TP.HCM (+1), Hà Nội (+1)" },
+      { code: "C", title: "Cạnh tranh thúc đẩy đổi mới dịch vụ", desc: "TP.HCM (+1), Hà Nội (+1)" },
+      { code: "C", title: "Hội nhập kinh tế quốc tế", desc: "TP.HCM (+1), Hà Nội (+1), Hải Phòng (+2)" },
+
+      { code: "D", title: "Hạ tầng giao thông hiện đại", desc: "Hà Nội (+1), TP.HCM (+1), Hải Phòng (+2)" },
+      { code: "D", title: "Phát triển công nghệ thông tin", desc: "TP.HCM (+1), Hà Nội(+1)" },
+      { code: "D", title: "Chuyển đổi số trong dịch vụ", desc: "TP.HCM(+1), Hà Nội(+1)" },
+
+      { code: "E", title: "Chính sách ưu tiên phát triển dịch vụ", desc: "Hà Nội (+1), TP.HCM (+1)" },
+      { code: "E", title: "Ký kết FTA thế hệ mới", desc: "TP.HCM (+1), Hải Phòng (+2)" },
+      { code: "E", title: "Hỗ trợ phát triển vùng kinh tế trọng điểm", desc: "Hà Nội (+1), TP.HCM(+1)" },
+      { code: "E", title: "Định hướng chuyển đổi mô hình tăng trưởng", desc: "Hà Nội(+1), TP.HCM(+1)" },
+      { code: "E", title: "Thủ tục hành chính phức tạp", desc: "TP.HCM (-2), Hà Nội (-2)" },
+
+      { code: "F", title: "Vị trí trên tuyến thương mại quốc tế", desc: "Hải Phòng (+2), TP.HCM (+1)" }
+    ]
+  },
+
+  {
+    name: "Hải Phòng",
+    imageUrl: "assets/haiphong.jpg",
+    tags: ["Cảng biển", "Logistics"],
+    impacts: [
+      { code: "A", title: "Phát triển khu công nghiệp tập trung", desc: "Bình Dương (+1), Đồng Nai (+2), Hải Phòng (+2)" },
+      { code: "A", title: "Gia tăng sản xuất trong nước", desc: "Hà Nội (+1), TP.HCM (+1), Hải Phòng (+2)" },
+      { code: "A", title: "Phát triển logistics và vận tải", desc: "Hải Phòng (+1), Quảng Ninh (+3), Đà Nẵng (+2)" },
+
+      { code: "C", title: "Mở rộng thị trường xuất khẩu", desc: "Hải Phòng (+2), Quảng Ninh (+2)" },
+      { code: "C", title: "Hội nhập kinh tế quốc tế", desc: "TP.HCM (+1), Hà Nội (+1), Hải Phòng (+2)" },
+      { code: "C", title: "Phát triển thương mại và logistics", desc: "Hải Phòng (+2), Quảng Ninh (+3)" },
+      { code: "C", title: "Phụ thuộc thị trường bên ngoài", desc: "Quảng Ninh (-2), Hải Phòng (-2)" },
+
+      { code: "D", title: "Hạ tầng giao thông hiện đại", desc: "Hà Nội (+1), TP.HCM (+1), Hải Phòng (+2)" },
+      { code: "D", title: "Phát triển cảng biển và sân bay", desc: "Hải Phòng(+2), Đà Nẵng(+2)" },
+
+      { code: "E", title: "Ký kết FTA thế hệ mới", desc: "TP.HCM (+1), Hải Phòng (+2)" },
+
+      { code: "F", title: "Vị trí trên tuyến thương mại quốc tế", desc: "Hải Phòng (+2), TP.HCM (+1)" },
+      { code: "F", title: "Cửa ngõ giao thương của vùng", desc: "Hải Phòng (+2), Quảng Ninh (+1)" }
+    ]
+  },
+
+  {
+    name: "Đà Nẵng",
+    imageUrl: "assets/danang.jpg",
+    tags: ["Du lịch", "Dịch vụ đô thị"],
+    impacts: [
+      { code: "A", title: "Mở rộng vùng kinh tế trọng điểm", desc: "Hà Nội (+1), TP.HCM (+1), Đà Nẵng (+2)" },
+      { code: "A", title: "Phát triển logistics và vận tải", desc: "Hải Phòng (+1), Quảng Ninh (+3), Đà Nẵng (+2)" },
+
+      { code: "B", title: "Chất lượng cuộc sống nâng cao", desc: "Hà Nội (+1), TP.HCM (+1), Đà Nẵng (+3)" },
+      { code: "B", title: "Tăng nhu cầu du lịch và giải trí", desc: "Đà Nẵng (+2), Khánh Hòa (+3), Quảng Ninh (+3)" },
+
+      { code: "C", title: "Nhu cầu dịch vụ tăng nhanh", desc: "Đà Nẵng (+2), Khánh Hòa (+3)" },
+
+      { code: "D", title: "Nâng cấp cơ sở du lịch", desc: "Đà Nẵng(+1), Khánh Hòa (+2)" },
+      { code: "D", title: "Phát triển cảng biển và sân bay", desc: "Hải Phòng(+2), Đà Nẵng(+2)" },
+
+      { code: "E", title: "Chính sách phát triển du lịch", desc: "Đà Nẵng (+2), Khánh Hòa (+2)" },
+
+      { code: "F", title: "Cảnh quan thiên nhiên đẹp", desc: "Khánh Hòa(+2), Quảng Ninh(+2), Đà Nẵng(+2)" },
+      { code: "F", title: "Liên kết du lịch vùng", desc: "Đà Nẵng (+2), Khánh Hòa (+2)" }
+    ]
+  },
+
+  {
+    name: "Cần Thơ",
+    imageUrl: "assets/cantho.jpg",
+    tags: ["Trung tâm ĐBSCL"],
+    impacts: [
+      { code: "A", title: "Phát triển kinh tế không đồng đều", desc: "Lào Cai (-1), Cần Thơ (-2)" },
+
+      { code: "B", title: "Thiếu lao động chất lượng cao", desc: "Lào Cai (-1), Cần Thơ (-1)" },
+
+      { code: "C", title: "Cạnh tranh gay gắt, nguy cơ đào thải cao", desc: "Khánh Hòa  (-1), Cần Thơ (-1)" },
+
+      { code: "D", title: "Hạ tầng chưa đồng bộ", desc: "Lào Cai (-1), Cần Thơ (-1)" },
+
+      { code: "E", title: "Chính sách chưa đồng bộ giữa các vùng", desc: "Lào Cai (-1), Cần Thơ(-1)" },
+
+      { code: "F", title: "Mạng lưới sông ngòi thuận lợi giao thông", desc: "Cần Thơ(+3), Hà Nội (+1)" },
+      { code: "F", title: "Thiên tai ảnh hưởng đến hoạt động dịch vụ", desc: "Khánh Hòa (-2), Cần Thơ (-1)" },
+      { code: "F", title: "Biến đổi khí hậu", desc: "Cần Thơ (-1), Khánh Hòa (-1)" }
+    ]
+  },
+
+  {
+    name: "Quảng Ninh",
+    imageUrl: "assets/quangninh.jpg",
+    tags: ["Du lịch", "Dịch vụ tổng hợp"],
+    impacts: [
+      { code: "A", title: "Phát triển logistics và vận tải", desc: "Hải Phòng (+1), Quảng Ninh (+3), Đà Nẵng (+2)" },
+      { code: "A", title: "Phụ thuộc vào một ngành kinh tế", desc: "Khánh Hòa (-1), Quảng Ninh (-1)" },
+
+      { code: "B", title: "Tăng nhu cầu du lịch và giải trí", desc: "Đà Nẵng (+2), Khánh Hòa (+3), Quảng Ninh (+3)" },
+
+      { code: "C", title: "Mở rộng thị trường xuất khẩu", desc: "Hải Phòng (+2), Quảng Ninh (+2)" },
+      { code: "C", title: "Phát triển thương mại và logistics", desc: "Hải Phòng (+2), Quảng Ninh (+3)" },
+      { code: "C", title: "Phụ thuộc thị trường bên ngoài", desc: "Quảng Ninh (-2), Hải Phòng (-2)" },
+
+      { code: "F", title: "Cảnh quan thiên nhiên đẹp", desc: "Khánh Hòa(+2), Quảng Ninh(+2), Đà Nẵng(+2)" },
+      { code: "F", title: "Phát triển du lịch biển đảo", desc: "Khánh Hòa(+2), Quảng Ninh(+2)" },
+      { code: "F", title: "Cửa ngõ giao thương của vùng", desc: "Hải Phòng (+2), Quảng Ninh (+1)" }
+    ]
+  },
+
+  {
+    name: "Bình Dương",
+    imageUrl: "assets/binhduong.jpg",
+    tags: ["Dịch vụ công nghiệp"],
+    impacts: [
+      { code: "A", title: "Tăng trưởng công nghiệp mạnh", desc: "TP.HCM (+1), Bình Dương (+2), Đồng Nai (+3)" },
+      { code: "A", title: "Phát triển khu công nghiệp tập trung", desc: "Bình Dương (+1), Đồng Nai (+2), Hải Phòng (+2)" },
+      { code: "A", title: "Công nghiệp gây áp lực môi trường", desc: "TP.HCM (-3), Bình Dương (-1)" },
+
+      { code: "B", title: "Nguồn lao động dồi dào", desc: "TP.HCM (+1), Bình Dương (+2), Đồng Nai (+1)" },
+      { code: "B", title: "Đô thị hóa nhanh", desc: "TP.HCM (+1), Bình Dương (+3)" },
+
+      { code: "D", title: "Thu hút đầu tư nhờ hạ tầng tốt", desc: "Bình Dương (+2), Đồng Nai(+2)" },
+
+      { code: "E", title: "Chính sách thu hút đầu tư", desc: "Bình Dương (+3), Đồng Nai (+3)" }
+    ]
+  },
+
+  {
+    name: "Đồng Nai",
+    imageUrl: "assets/dongnai.jpg",
+    tags: ["Logistics", "Công nghiệp phụ trợ"],
+    impacts: [
+      { code: "A", title: "Tăng trưởng công nghiệp mạnh", desc: "TP.HCM (+1), Bình Dương (+2), Đồng Nai (+3)" },
+      { code: "A", title: "Phát triển khu công nghiệp tập trung", desc: "Bình Dương (+1), Đồng Nai (+2), Hải Phòng (+2)" },
+
+      { code: "B", title: "Nguồn lao động dồi dào", desc: "TP.HCM (+1), Bình Dương (+2), Đồng Nai (+1)" },
+
+      { code: "D", title: "Thu hút đầu tư nhờ hạ tầng tốt", desc: "Bình Dương (+2), Đồng Nai(+2)" },
+
+      { code: "E", title: "Chính sách thu hút đầu tư", desc: "Bình Dương (+3), Đồng Nai (+3)" }
+    ]
+  },
+
+  {
+    name: "Khánh Hòa (Nha Trang)",
+    imageUrl: "assets/khanhhoa.jpg",
+    tags: ["Du lịch biển"],
+    impacts: [
+      { code: "A", title: "Phụ thuộc vào một ngành kinh tế", desc: "Khánh Hòa (-1), Quảng Ninh (-1)" },
+
+      { code: "B", title: "Tăng nhu cầu du lịch và giải trí", desc: "Đà Nẵng (+2), Khánh Hòa (+3), Quảng Ninh (+3)" },
+
+      { code: "C", title: "Nhu cầu dịch vụ tăng nhanh", desc: "Đà Nẵng (+2), Khánh Hòa (+3)" },
+      { code: "C", title: "Cạnh tranh gay gắt, nguy cơ đào thải cao", desc: "Khánh Hòa  (-1), Cần Thơ (-1)" },
+      { code: "C", title: "Biến động nhu cầu thị trường", desc: "Khánh Hòa (-1)" },
+
+      { code: "D", title: "Nâng cấp cơ sở du lịch", desc: "Đà Nẵng(+1), Khánh Hòa (+2)" },
+      { code: "D", title: "Chi phí đầu tư hạ tầng cao", desc: "Khánh Hòa(-1)" },
+
+      { code: "E", title: "Chính sách phát triển du lịch", desc: "Đà Nẵng (+2), Khánh Hòa (+2)" },
+
+      { code: "F", title: "Cảnh quan thiên nhiên đẹp", desc: "Khánh Hòa(+2), Quảng Ninh(+2), Đà Nẵng(+2)" },
+      { code: "F", title: "Phát triển du lịch biển đảo", desc: "Khánh Hòa(+2), Quảng Ninh(+2)" },
+      { code: "F", title: "Liên kết du lịch vùng", desc: "Đà Nẵng (+2), Khánh Hòa (+2)" },
+      { code: "F", title: "Thiên tai ảnh hưởng đến hoạt động dịch vụ", desc: "Khánh Hòa (-2), Cần Thơ (-1)" },
+      { code: "F", title: "Biến đổi khí hậu", desc: "Cần Thơ (-1), Khánh Hòa (-1)" }
+    ]
+  },
+
+  {
+    name: "Lào Cai (Sa Pa)",
+    imageUrl: "assets/laocai.jpg",
+    tags: ["Du lịch sinh thái", "Cửa khẩu"],
+    impacts: [
+      { code: "A", title: "Phát triển kinh tế không đồng đều", desc: "Lào Cai (-1), Cần Thơ (-2)" },
+
+      { code: "B", title: "Thiếu lao động chất lượng cao", desc: "Lào Cai (-1), Cần Thơ (-1)" },
+      { code: "B", title: "Chênh lệch mức sống giữa các vùng", desc: "Lào Cai (-1)" },
+
+      { code: "D", title: "Hạ tầng chưa đồng bộ", desc: "Lào Cai (-1), Cần Thơ (-1)" },
+      { code: "D", title: "Khoảng cách công nghệ giữa các vùng", desc: "Lào Cai(-1)" },
+
+      { code: "E", title: "Chính sách chưa đồng bộ giữa các vùng", desc: "Lào Cai (-1), Cần Thơ(-1)" },
+      { code: "E", title: "Khó tiếp cận chính sách hỗ trợ", desc: "Lào Cai(-1)" },
+
+      { code: "F", title: "Địa hình chia cắt mạnh", desc: "Lào Cai (-1)" }
+    ]
+  }
+]
+
     };
 
     const $ = (q) => document.querySelector(q);
@@ -314,7 +529,9 @@
       const tags = (place.tags || []).map(t => `<span class="chip">${escapeHtml(t)}</span>`).join("");
       const impacts = (place.impacts || []).map(it => `
         <div class="impact-item">
-          <div class="impact-tag">${escapeHtml(it.code || "T")}</div>
+          <div class="impact-tag" data-code="${escapeHtml(it.code || "")}">
+            ${escapeHtml(it.code || "T")}
+          </div>
           <div class="impact-text">
             <p class="impact-title">${escapeHtml(it.title || "")}</p>
             <p class="impact-desc">${escapeHtml(it.desc || "")}</p>
@@ -338,12 +555,12 @@
               <div class="impact-head">
                 <h4>Danh sách lá tác động</h4>
                 <span class="pill" style="padding:6px 10px;">
-                  <span class="dot" style="width:7px;height:7px;background:var(--red)"></span>
+                  <span class="dot" style="width:7px;height:7px;"></span>
                   <span>${(place.impacts || []).length} lá</span>
                 </span>
               </div>
               <div class="impact-items">
-                ${impacts || `<div class="muted">Chưa có lá tác động.</div>`}
+                ${impacts}
               </div>
             </div>
           </div>
@@ -410,6 +627,104 @@
     bindHero();
     bindRules();
     buildSlider();
+    // (Click A–F to show a note)
+const CODE_NOTE = {
+  A: "Trình độ phát triển kinh tế",
+  B: "Dân cư",
+  C: "Thị trường",
+  D: "Cơ sở vật chất – KHKT",
+  E: "Chính sách",
+  F: "Vị trí địa lí – Tự nhiên"
+};
+
+let noteEl = null;
+
+function ensureNoteEl(){
+  if (noteEl) return noteEl;
+  noteEl = document.createElement("div");
+  noteEl.className = "tag-note";
+  noteEl.setAttribute("role", "note");
+  document.body.appendChild(noteEl);
+  return noteEl;
+}
+
+function hideNote(){
+  if (!noteEl) return;
+  noteEl.classList.remove("show");
+}
+
+function showNoteAt(code, anchorEl){
+  const label = CODE_NOTE[code];
+  if (!label) return;
+
+  const el = ensureNoteEl();
+  el.innerHTML = `
+    <div><span class="k">${code}:</span><span class="v">${escapeHtml(label)}</span></div>
+    <div class="hint">Bấm ra ngoài để đóng</div>
+  `;
+
+  // vị trí tooltip theo element được click
+  const r = anchorEl.getBoundingClientRect();
+
+  // đặt tạm để đo size
+  el.style.left = "0px";
+  el.style.top = "0px";
+  el.classList.add("show");
+
+  const pad = 10;
+  const w = el.offsetWidth;
+  const h = el.offsetHeight;
+
+  // ưu tiên hiện bên phải tag, nếu thiếu thì chuyển sang trái
+  let x = r.right + 10;
+  let y = r.top + (r.height / 2) - (h / 2);
+
+  // clamp trong viewport
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  if (x + w + pad > vw) x = Math.max(pad, r.left - 10 - w);
+  y = Math.min(vh - h - pad, Math.max(pad, y));
+
+  el.style.left = `${x}px`;
+  el.style.top = `${y}px`;
+}
+
+// Event delegation: vì slides được render động
+document.addEventListener("click", (e) => {
+  const tag = e.target.closest(".impact-tag");
+  if (!tag) {
+    // click ra ngoài thì đóng
+    hideNote();
+    return;
+  }
+
+  const code = (tag.dataset.code || "").trim().toUpperCase();
+  if (!CODE_NOTE[code]) return;
+
+  // toggle nếu bấm lại cùng 1 tag
+  if (noteEl && noteEl.classList.contains("show")) {
+    // nếu đang mở và click lại cùng code -> đóng
+    const currentText = noteEl.textContent || "";
+    if (currentText.includes(`${code}:`)) {
+      hideNote();
+      return;
+    }
+  }
+  showNoteAt(code, tag);
+});
+
+// đóng khi cuộn danh sách impacts hoặc scroll trang
+document.addEventListener("scroll", hideNote, true);
+
+// đóng khi đổi kích thước
+window.addEventListener("resize", hideNote);
+
+// đóng bằng Esc
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") hideNote();
+});
+
   </script>
 </body>
 </html>

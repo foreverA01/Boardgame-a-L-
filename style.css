@@ -300,12 +300,13 @@ a{color:inherit}
     display:grid;
     grid-template-columns: .9fr 1.1fr;
     gap:16px;
-    align-items:start;
+    align-items: stretch;
 }
-@media (max-width: 920px){
-    .slide-grid{grid-template-columns:1fr}
+.impact-list{
+  height: clamp(420px, 62vh, 720px);  /* chỉnh tùy ý */
+  display: flex;
+  flex-direction: column;
 }
-
 .place-card, .impact-list{
     padding:16px;
     border-radius: 16px;
@@ -348,9 +349,17 @@ a{color:inherit}
     border-radius:999px;
 }
 
-.impact-items{display:grid; gap:10px;}
+.impact-items{
+  display: grid;
+  gap: 10px;
+
+  flex: 1;           /* chiếm phần còn lại trong .impact-list */
+  min-height: 0;     /* cực quan trọng để overflow hoạt động trong flex */
+  overflow-y: auto;  /* cuộn ở đây */
+  padding-right: 6px;
+}
 .impact-item{
-    padding:12px 12px;
+    padding:12px 6px 12px 12px;
     border-radius: 14px;
     border:1px solid rgba(11,27,51,.14);
     background: rgba(244,239,230,.60);
@@ -402,4 +411,56 @@ a{color:inherit}
   height:100%;
   object-fit: cover;   /* không cắt */
   display:block;
+}
+.impact-items::-webkit-scrollbar{ width: 10px; }
+.impact-items::-webkit-scrollbar-thumb{
+  background: rgba(11,27,51,.18);
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.55);
+}
+.impact-items::-webkit-scrollbar-track{ background: transparent; }
+
+/* Tooltip note for A–F */
+.impact-tag{
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.tag-note{
+  position: fixed;              /* đặt theo viewport để không bị cắt trong vùng scroll */
+  z-index: 200;
+  min-width: 220px;
+  max-width: 320px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(11,27,51,.18);
+  background: rgba(244,239,230,.96);
+  box-shadow: 0 14px 40px rgba(11,27,51,.20);
+  color: rgba(11,27,51,.92);
+  font-size: 13px;
+  line-height: 1.35;
+  display: none;
+}
+
+.tag-note.show{ display:block; }
+
+.tag-note .k{
+  font-weight: 950;
+  color: var(--navy);
+  margin-right: 6px;
+}
+.tag-note .v{
+  font-weight: 800;
+  color: rgba(11,27,51,.85);
+}
+.tag-note .hint{
+  margin-top: 6px;
+  color: rgba(11,27,51,.65);
+  font-size: 12px;
+}
+@media (max-width: 920px){
+    .slide-grid{grid-template-columns:1fr}
+    .impact-list{ height: auto; }
+    .impact-items{ overflow: visible; }
 }
