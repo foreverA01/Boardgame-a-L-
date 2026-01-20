@@ -186,6 +186,7 @@ a{color:inherit}
 
 .a4-preview{
     width:100%;
+    max-height: 360px;          /* 👈 chỉnh gọn tại đây */
     aspect-ratio: 210 / 297;
     border-radius: 16px;
     border:1px solid rgba(11,27,51,.14);
@@ -194,7 +195,7 @@ a{color:inherit}
     cursor:zoom-in;
     overflow:hidden;
     position:relative;
-    padding: 10px; /* to show border like card */
+    padding: 10px;
 }
 
 /* rules thumb as image, also "contain" to avoid cropping */
