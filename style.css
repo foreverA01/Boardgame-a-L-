@@ -114,7 +114,11 @@ a{color:inherit}
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
-.card.pad{padding:18px}
+.card.pad{
+    height: clamp(290px, 42vh, 460px); /* chỉnh tùy ý */
+    display: flex;
+    flex-direction: column;
+}
 .card h3{margin:0 0 10px; font-size:18px; letter-spacing:-.01em;}
 .muted{color:var(--muted)}
 .divider{height:1px;background:var(--line); margin:14px 0}
@@ -464,4 +468,84 @@ a{color:inherit}
     .slide-grid{grid-template-columns:1fr}
     .impact-list{ height: auto; }
     .impact-items{ overflow: visible; }
+}
+/* Font cho tiêu đề lớn */
+.title,
+.section h2,
+.impact-head h4,
+.place-name{
+  font-family: "Waldemar", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  letter-spacing: 0.5px; /* tùy chỉnh */
+}
+.mini-slider{ position:relative; overflow:hidden;}
+.mini-slides{
+  display:flex;
+  transition: transform .28s ease;
+  will-change: transform;
+}
+.mini-slide{ min-width:100%; }
+
+.box-frame{
+  border-radius: 14px;
+  border: 1px solid rgba(11,27,51,.14);
+  background: rgba(255,255,255,.7);
+  overflow:hidden;
+  padding:10px;
+}
+.box-img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit: contain;
+}
+
+.mini-controls{
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* ← dots → */
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 10px;
+}
+.mini-dots{ display:flex; gap:8px; align-items:center; justify-content:center; flex:1; }
+.mini-dot{
+  width:9px; height:9px; border-radius:999px;
+  border:1px solid rgba(11,27,51,.20);
+  background: rgba(255,255,255,.65);
+  cursor:pointer;
+}
+.mini-dot.active{ background: var(--red); border-color: var(--red); }
+#heroInfoSlider{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* Padding chuẩn cho nội dung slide */
+#heroInfoSlider .mini-slide{
+  padding: 14px 25px;
+  overflow: auto;
+}
+
+/* Tiêu đề slide gọn */
+#heroInfoSlider .mini-slide h3{
+  margin: 2px 0 10px;
+  font-size: 18px;
+}
+
+/* Paragraph & list căn đều */
+#heroInfoSlider .mini-slide p{
+  margin: 8px 0;
+}
+
+#heroInfoSlider .mini-slide ul{
+  margin: 8px 0 10px;
+  padding-left: 18px;   /* thụt vào đẹp */
+}
+
+#heroInfoSlider .mini-slide li{
+  margin: 6px 0;
+}
+.card.rules{
+    height: clamp(230px, 30vh, 400px); /* chỉnh tùy ý */
+    display: flex;
+    flex-direction: column;
 }

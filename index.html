@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Boardgame Landing Page (Demo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Waldemar&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -28,6 +31,8 @@
   <section class="section" id="intro">
     <div class="wrap">
       <div class="grid-2">
+
+        <!-- LEFT -->
         <div>
           <h1 class="title" id="gameTitle">TÊN TRÒ CHƠI</h1>
           <p class="subtitle" id="gameGoal">Mục đích boardgame…</p>
@@ -41,46 +46,61 @@
           <div class="divider"></div>
 
           <div class="card pad">
-            <h3>Boardgame Of The Year</h3>
-            <p class="muted" style="margin:0; line-height:1.65;">
-              <p>Tổng quan:</p>
-              <ul>
-                <li>Những nhân tố ảnh hưởng ngành dịch vụ - kinh tế, xã hội, môi trường </li>
-                <li>Vai trò của dịch vụ qua những hiện tượng thực tế</li>
-                <li>Tầm quan trọng của việc đánh giá rủi ro và nắm bắt cơ hội</li>
-              </ul>
-              Địa Lý 12 Cơ Bản 2 - Nhóm 1
-              <br/>
-              Gia Minh, Hạnh Nguyên, Ngọc Liên, Tuấn Hưng, Xuân Phú
-            </p>
-          </div>
-        </div>
+            <div class="mini-slider" id="heroInfoSlider">
+              <div class="mini-slides">
 
-        <!-- Right: 2 sample cards as IMG -->
+                <!-- SLIDE 1 -->
+                <div class="mini-slide">
+                  <h3>Boardgame Of The Year</h3>
+
+                  <div class="muted">
+                    <p><b>Tổng quan:</b></p>
+                    <ul>
+                      <li>Những nhân tố ảnh hưởng ngành dịch vụ – kinh tế, xã hội, môi trường</li>
+                      <li>Vai trò của dịch vụ qua những hiện tượng thực tế</li>
+                      <li>Tầm quan trọng của việc đánh giá rủi ro và nắm bắt cơ hội</li>
+                    </ul>
+                    <p>Địa Lý 12 Cơ Bản 2 – Nhóm 1</p>
+                    <p>Gia Minh, Hạnh Nguyên, Ngọc Liên, Tuấn Hưng, Xuân Phú</p>
+                  </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="mini-slide">
+                  <h3>Hình hộp boardgame</h3>
+
+                  <div class="box-frame">
+                    <img class="box-img" src="assets/box.png" alt="Hình hộp boardgame" />
+                  </div>
+
+                  <p class="muted">Thay <code>assets/box.png</code> bằng ảnh hộp hoặc ảnh minh hoạ của bạn.</p>
+                </div>
+
+              </div><!-- /.mini-slides -->
+
+              <div class="mini-controls">
+                <button class="btn" type="button" data-mini="prev">←</button>
+                <div class="mini-dots"></div>
+                <button class="btn" type="button" data-mini="next">→</button>
+              </div>
+            </div><!-- /.mini-slider -->
+          </div><!-- /.card.pad -->
+        </div><!-- /LEFT -->
+
+        <!-- RIGHT -->
         <div class="hero-right">
           <div class="card-frame">
-            <!-- (1) Put your image here -->
-            <img
-              class="card-img"
-              id="sampleImg1"
-              src="assets/sample-card-1.png"
-              alt="Lá tác động mẫu 1"
-            />
+            <img class="card-img" id="sampleImg1" src="assets/sample-card-1.png" alt="Lá tác động mẫu 1" />
           </div>
-
           <div class="card-frame">
-            <!-- (1) Put your image here -->
-            <img
-              class="card-img"
-              id="sampleImg2"
-              src="assets/sample-card-2.png"
-              alt="Lá tác động mẫu 2"
-            />
+            <img class="card-img" id="sampleImg2" src="assets/sample-card-2.png" alt="Lá tác động mẫu 2" />
           </div>
-        </div>
-      </div>
-    </div>
+        </div><!-- /RIGHT -->
+
+      </div><!-- /.grid-2 -->
+    </div><!-- /.wrap -->
   </section>
+
 
   <!-- SECTION 2 -->
   <section class="section" id="rules">
@@ -107,17 +127,17 @@
         </div>
 
         <!-- Right -->
-        <div class="card pad">
-          <h2 style="margin:0 0 8px; font-size:32px; letter-spacing:-.02em; color:var(--navy);">Luật chơi</h2>
+        <div class="card rules" style="padding-bottom: 0px;">
+          <h2 style="margin:0 0 8px; font-size:32px; letter-spacing:-.02em; color:var(--navy); padding-left: 25px; padding-top: 15px;">Luật chơi</h2>
           <p class="muted" style="margin:0; line-height:1.7;" id="rulesIntro">
             Luật chơi dùng ảnh PNG hoặc PDF A4. Thumbnail nhỏ theo chiều cao div; click để mở modal và kéo lên xuống.
           </p>
 
           <div class="divider"></div>
-          <h3>Gợi ý file (3)</h3>
-          <ul class="muted" style="margin:0; line-height:1.7;">
-            <li>Nếu là <b>PNG</b>: thay <code>assets/rules-a4.png</code> và <code>assets/rules-a4-full.png</code>.</li>
-            <li>Nếu là <b>PDF</b>: thay <code>assets/rules.pdf</code> và đặt <code>DATA.rules.type = "pdf"</code>.</li>
+          <h3 style="padding-left: 25px;">Thủ thuật chuyên nghiệp</h3>
+          <ul class="muted" style="margin:0; line-height:1.7; padding-left: 50px;">
+            <li>Ghi nhớ tiềm lực của địa dạnh, đánh gia cơ hội chiến thắng.</li>
+            <li>Quan sát hướng đi đối thủ, chờ đợi thời cơ.</li>
           </ul>
         </div>
       </div>
@@ -208,7 +228,7 @@
       // (3) Rules: chọn "image" hoặc "pdf"
       rules: {
         type: "image", // "image" | "pdf"
-        intro: "Luật chơi dùng ảnh PNG hoặc PDF A4. Thumbnail nhỏ theo chiều cao div; click để mở modal và kéo đọc.",
+        intro: "",
         thumbSrc: "assets/rules-a4.png",        // thumbnail
         fullImgSrc: "assets/rules-a4-full.png", // full image
         pdfSrc: "assets/rules.pdf",             // pdf
@@ -729,6 +749,38 @@ window.addEventListener("resize", hideNote);
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") hideNote();
 });
+function initMiniSlider(rootId){
+  const root = document.getElementById(rootId);
+  if (!root) return;
+
+  const track = root.querySelector(".mini-slides");
+  const slides = Array.from(root.querySelectorAll(".mini-slide"));
+  const dotsWrap = root.querySelector(".mini-dots");
+  let i = 0;
+
+  dotsWrap.innerHTML = slides.map((_, idx) =>
+    `<button class="mini-dot ${idx===0?'active':''}" data-i="${idx}" aria-label="Slide ${idx+1}"></button>`
+  ).join("");
+
+  const dots = Array.from(dotsWrap.querySelectorAll(".mini-dot"));
+
+  function render(){
+    track.style.transform = `translateX(${-i*100}%)`;
+    dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
+  }
+  function goTo(idx){
+    i = (idx + slides.length) % slides.length;
+    render();
+  }
+
+  root.querySelector('[data-mini="prev"]').addEventListener("click", () => goTo(i-1));
+  root.querySelector('[data-mini="next"]').addEventListener("click", () => goTo(i+1));
+  dots.forEach(d => d.addEventListener("click", () => goTo(parseInt(d.dataset.i, 10))));
+
+  render();
+}
+
+initMiniSlider("heroInfoSlider");
 
   </script>
 </body>
